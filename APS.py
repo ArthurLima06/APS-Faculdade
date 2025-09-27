@@ -26,8 +26,7 @@ def calcular_emissoes():
     print("=== Calculadora de Carbono ===")
 
     energia = float(input("Digite o consumo de energia elétrica (kWh): "))
-    combustivel = float(input("Digite o consumo de combustível (litros): "))
-
+    
     print("\n--- Tipos de veículos disponíveis ---")
     print("1 - Carro")
     print("2 - Moto")
@@ -37,9 +36,11 @@ def calcular_emissoes():
     escolha = input("Escolha o tipo de veículo (1/2/3/4): ")
 
     veiculos = {"1": "carro", "2": "moto", "3": "avião", "4": "barco"}
-    tipo_veiculo = veiculos.get(escolha, "carro")  # padrão = carro
+    tipo_veiculo = veiculos.get(escolha, "carro") 
+    adrão = carro
 
-    km = float(input(f"Digite a distância percorrida em {tipo_veiculo} (km): "))
+    km = float(input(f"Digite a distância percorrida em (km): "))
+    combustivel = float(input("Digite o consumo de combustível (litros/KM): ")) #
 
     # Cálculos
     emissao_e = emissao_energia(energia)
