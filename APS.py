@@ -17,12 +17,6 @@ def emissao_viagem_veiculo(km, tipo):
     }
     return km * fatores.get(tipo, 0)
 
-def consumo_medio_de_energia(km, combustivel):
-    #consumo médio de energia para todos os tipos de veículos
-    media = (km / combustivel) * 8,9
-    return media
-
-
 # Função principal de cálculo
 def calcular_emissoes():
     print("=== Calculadora de Carbono ===")
@@ -45,13 +39,13 @@ def calcular_emissoes():
     # Cálculos
     emissao_c = emissao_combustivel(combustivel)
     emissao_v = emissao_viagem_veiculo(km, tipo_veiculo)
-    consumo_e = consumo_medio_de_energia(km, combustivel)
+    mediaenergia = (km / combustivel) * 8.9
+    emissao_e = mediaenergia * 0.233
     total = emissao_e + emissao_c + emissao_v
-    emissao_e = consumo_e * 8,9
 
     # Resultados parciais
     print("\n--- RESULTADOS PARCIAIS ---")
-    print(f"Consumo médio de energia do veículo: {consumo_e:.2f} kWh/100km")
+    print(f"Consumo médio de energia do veículo: {mediaenergia:.2f} kWh/100km")
     print("OBS: Consumo médio baseado em dados genéricos.")
     print(f"Emissões por energia: {emissao_e:.2f} kg CO2")
     print(f"Emissões por combustível: {emissao_c:.2f} kg CO2")
