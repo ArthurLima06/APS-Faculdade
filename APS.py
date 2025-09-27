@@ -35,11 +35,26 @@ def calcular_emissoes():
 
     km = float(input(f"Digite a distância percorrida em (km): "))
     combustivel = float(input("Digite o consumo de combustível (litros/KM): ")) 
-    
+
+    # Consumo de energia personalizado para cada veículo, ou padrão para todos
+    opcoes = input("você quer usar o consumo de energia padrão ou personalizado? (p/pers): ").lower()
+    if opcoes == 'pers':
+        if escolha == 1:
+            mediaenergia = km * 0.67
+        elif escolha == 2:
+            mediaenergia = km * 0.33
+        elif escolha == 3:
+            passageiros = int(input("Digite o número de passageiros do avião: "))
+            mediaenergia = km * 0.33 * passageiros
+        elif escolha == 4:
+            mediaenergia = km * 4.8
+    elif opcoes == 'p':
+        mediaenergia = (km * combustivel) * 9.5
+
     # Cálculos
     emissao_c = emissao_combustivel(combustivel)
     emissao_v = emissao_viagem_veiculo(km, tipo_veiculo)
-    mediaenergia = (km / combustivel) * 8.9
+    
     emissao_e = mediaenergia * 0.233
     total = emissao_e + emissao_c + emissao_v
 
