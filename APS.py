@@ -28,7 +28,7 @@ def calcular_emissoes():
     print("3 - Avião")
     print("4 - Barco")
 
-    escolha = input("Escolha o tipo de veículo (1/2/3/4): ")
+    escolha = int(input("Escolha o tipo de veículo (1/2/3/4): "))
 
     veiculos = {"1": "carro", "2": "moto", "3": "avião", "4": "barco"}
     tipo_veiculo = veiculos.get(escolha, "carro") 
@@ -55,7 +55,7 @@ def calcular_emissoes():
     emissao_c = emissao_combustivel(combustivel)
     emissao_v = emissao_viagem_veiculo(km, tipo_veiculo)
     
-    emissao_e = mediaenergia * 0.233
+    emissao_e = mediaenergia * 0.233 #Consumo em KG de CO2 por kWh (média global)
     total = emissao_e + emissao_c + emissao_v
 
     # Resultados parciais
