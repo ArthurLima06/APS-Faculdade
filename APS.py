@@ -37,7 +37,6 @@ def calcular_emissoes():
 
     veiculos = {"1": "carro", "2": "moto", "3": "avião", "4": "barco"}
     tipo_veiculo = veiculos.get(escolha, "carro") 
-    adrão = carro
 
     km = float(input(f"Digite a distância percorrida em (km): "))
     combustivel = float(input("Digite o consumo de combustível (litros/KM): ")) #
