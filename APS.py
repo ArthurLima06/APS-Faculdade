@@ -30,8 +30,17 @@ def calcular_emissoes():
 
     escolha = int(input("Escolha o tipo de veículo (1/2/3/4): "))
 
-    veiculos = {"1": "carro", "2": "moto", "3": "avião", "4": "barco"}
-    tipo_veiculo = veiculos.get(escolha, "carro") 
+    if escolha == 1:
+        veiculos = "carro"
+    elif escolha == 2:
+        veiculos = "moto"
+    elif escolha == 3:
+        veiculos = "avião"
+    elif escolha == 4:
+        veiculos = "barco"
+    else:
+        print("Escolha inválida.")
+        return 0
 
     km = float(input(f"Digite a distância percorrida em (km): "))
     combustivel = float(input("Digite o consumo de combustível (litros/KM): ")) 
@@ -53,7 +62,7 @@ def calcular_emissoes():
 
     # Cálculos
     emissao_c = emissao_combustivel(combustivel)
-    emissao_v = emissao_viagem_veiculo(km, tipo_veiculo)
+    emissao_v = emissao_viagem_veiculo(km, veiculos)
     
     emissao_e = mediaenergia * 0.233 #Consumo em KG de CO2 por kWh (média global)
     total = emissao_e + emissao_c + emissao_v
@@ -65,13 +74,13 @@ def calcular_emissoes():
         print("OBS: Consumo médio baseado em dados genéricos.")
     print(f"Emissões por energia: {emissao_e:.2f} kg CO2")
     print(f"Emissões por combustível: {emissao_c:.2f} kg CO2")
-    print(f"Emissões por {tipo_veiculo}: {emissao_v:.2f} kg CO2")
+    print(f"Emissões por {veiculos}: {emissao_v:.2f} kg CO2")
     print(f"TOTAL de emissões: {total:.2f} kg CO2")
 
     # Resumo final (entrada + saída)
     print("\n=== RESUMO FINAL ===")
     print(f"Consumo de combustível: {combustivel} litros")
-    print(f"Distância percorrida de {tipo_veiculo}: {km} km")
+    print(f"Distância percorrida: {km} km")
     print(f"Total de emissões: {total:.2f} kg CO2")
 
     return total
