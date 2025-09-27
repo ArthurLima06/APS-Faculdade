@@ -61,7 +61,8 @@ def calcular_emissoes():
     # Resultados parciais
     print("\n--- RESULTADOS PARCIAIS ---")
     print(f"Consumo médio de energia do veículo: {mediaenergia:.2f} kWh/100km")
-    print("OBS: Consumo médio baseado em dados genéricos.")
+    if opcoes == 'p':
+        print("OBS: Consumo médio baseado em dados genéricos.")
     print(f"Emissões por energia: {emissao_e:.2f} kg CO2")
     print(f"Emissões por combustível: {emissao_c:.2f} kg CO2")
     print(f"Emissões por {tipo_veiculo}: {emissao_v:.2f} kg CO2")
