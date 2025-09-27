@@ -3,10 +3,6 @@
 # ========================================
 
 # Funções para cada tipo de emissão
-def emissao_energia(kwh):
-    # fator médio de emissão: 0.092 kg CO2 por kWh (exemplo)
-    return kwh * 0.092
-
 def emissao_combustivel(litros):
     # fator médio: 2.31 kg CO2 por litro de gasolina (exemplo)
     return litros * 2.31
@@ -20,6 +16,12 @@ def emissao_viagem_veiculo(km, tipo):
         "barco": 0.20    # kg CO2 por km
     }
     return km * fatores.get(tipo, 0)
+
+def consumo_medio_de_energia(media):
+    #consumo médio de energia para todos os tipos de veículos
+    media = (km / combustivel) * 8,9
+    return media
+
 
 # Função principal de cálculo
 def calcular_emissoes():
@@ -42,13 +44,15 @@ def calcular_emissoes():
     combustivel = float(input("Digite o consumo de combustível (litros/KM): ")) #
 
     # Cálculos
-    emissao_e = emissao_energia(energia)
     emissao_c = emissao_combustivel(combustivel)
     emissao_v = emissao_viagem_veiculo(km, tipo_veiculo)
+    emissao_e = consumo_medio_de_energia * 0.233
     total = emissao_e + emissao_c + emissao_v
 
     # Resultados parciais
     print("\n--- RESULTADOS PARCIAIS ---")
+    print(f"Consumo médio de energia do veículo: {consumo_medio_de_energia:.2f} kWh/100km")
+    print("OBS: Consumo médio baseado em dados genéricos.")
     print(f"Emissões por energia: {emissao_e:.2f} kg CO2")
     print(f"Emissões por combustível: {emissao_c:.2f} kg CO2")
     print(f"Emissões por {tipo_veiculo}: {emissao_v:.2f} kg CO2")
