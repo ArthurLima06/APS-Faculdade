@@ -62,7 +62,7 @@ def calcular_emissoes():
 
     # Cálculos
     emissao_c = emissao_combustivel(combustivel)
-    emissao_v = emissao_viagem_veiculo(km, veiculos)
+    emissao_v = emissao_viagem_veiculo(km, veiculos )
     
     emissao_e = mediaenergia * 0.233 #Consumo em KG de CO2 por kWh (média global)
     total = emissao_e + emissao_c + emissao_v
