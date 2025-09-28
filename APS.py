@@ -48,7 +48,7 @@ def calcular_emissoes():
     # Consumo de energia personalizado para cada veículo, ou padrão para todos
     opcoes = input("você quer usar o consumo de energia padrão ou personalizado? (p/pers): ").lower()
     if opcoes == 'pers':
-        if escolha == 1:
+        if escolha == 1: 
             mediaenergia = km * 0.67
         elif escolha == 2:
             mediaenergia = km * 0.33
