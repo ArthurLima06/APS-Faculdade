@@ -1,3 +1,8 @@
+# ========================================
+# CALCULADORA DE CARBONO - VERSÃO ATUALIZADA COM INTERFACE GRÁFICA
+# ========================================
+
+#função principal para interface gráfica "TKinter"
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 
@@ -222,4 +227,5 @@ frame.columnconfigure(1, weight=1)
 # Variável global para exportar resultados
 resultados_atual = {}
 
+#função essencial para finalizar a interface gráfica
 root.mainloop()
