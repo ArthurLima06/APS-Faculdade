@@ -1,6 +1,8 @@
 # ========================================
-# CALCULADORA DE CARBONO - VERSÃO ATUALIZADA NORMAL
+# CALCULADORA DE CARBONO - VERSÃO ATUALIZADA COM INTERFACE GRÁFICA
 # ========================================
+
+from tkinter import *
 
 # Funções para cada tipo de emissão
 def emissao_combustivel(litros):
